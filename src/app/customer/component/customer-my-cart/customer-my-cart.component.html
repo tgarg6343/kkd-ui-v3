@@ -1,0 +1,90 @@
+<app-customer-header></app-customer-header>
+
+<div *ngIf="items[0]; then carts else empty"></div>
+<ng-template #carts>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    <span> icon </span> Continue shopping
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body mt-5">
+                    <div *ngFor="let item of items; let ind=index">    
+                    	<div class="row">
+                            <div class="col-sm-2">
+                                <img class="img-responsive" src="http://placehold.it/100x70">
+                            </div>
+                            <div class="col-sm-4">
+                                <h4 class="product-name"><strong>{{item.productName}}</strong></h4><h4><small>sold by {{item.farmerName}}</small></h4>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6 text-right">
+                                        <h6><strong>{{item.price}} <span class="text-muted">x</span></strong></h6>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control input-sm" value="{{item.quantity}}" readonly>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-link btn-xs" (click)="deleteItem(item,ind)">
+                                            <!-- <i class="fas fa-trash"></i> -->
+                                            delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="text-center">
+                            <div class="col-sm-9">
+                                <h6 class="text-right">Added items?</h6>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-default btn-sm btn-block">
+                                    Update cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row text-center">
+                        <div class="col-sm-9">
+                            <h4 class="text-right">Total <strong>${{x}}</strong></h4>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-success btn-block">
+                                Checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-template>
+
+<ng-template #empty>
+    <div class="wishlist-header">
+        <img src="http://www.austeknis.com/cart_files/cart_pix/empty_cart.jpg" alt="empty wishlist" class="img-fluid">
+        <div class="wishlist-header-content d-flex align-items-center justify-content-center">
+          WISHLIST
+        </div>
+      </div>
+</ng-template>

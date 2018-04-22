@@ -1,0 +1,26 @@
+.carousel {
+   margin-bottom: 4rem;
+ }
+
+ .carousel-caption {
+   bottom: 3rem;
+   z-index: 10;
+ }
+
+
+ .carousel-item {
+   height: 32rem;
+   background-color: #777;
+ }
+ .carousel-item > img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   min-width: 100%;
+   height: 32rem;
+   filter: brightness(70%);
+   -webkit-filter: brightness(70%);
+   -moz-filter: brightness(70%);
+   -o-filter: brightness(70%);
+   -ms-filter: brightness(70%);
+ }

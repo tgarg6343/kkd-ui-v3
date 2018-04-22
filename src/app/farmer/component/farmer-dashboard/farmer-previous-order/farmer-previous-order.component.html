@@ -1,0 +1,15 @@
+<app-farmer-header></app-farmer-header>
+<div class="container-fluid">
+	 <div class="row">
+	    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex align-items-stretch" *ngFor="let order of orderList" >
+        <div class="card my-3" *ngIf="order.orderType=='previous'">
+            <div class="card-body">
+              <h5 class="card-title one">{{order.orderId}}</h5>
+                <div id="scroll" class="card-text rubic">{{order.name}}
+                </div>
+                <p class="card-text"><small class="text-muted">{{order.quantity}}</small></p>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
